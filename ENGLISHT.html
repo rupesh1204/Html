@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English To Telugu</title>
+    <style>
+        .container{
+            width: 70%;
+            height: 70%;
+            background-color: cadetblue;
+            position: absolute;
+            left: 16%;
+            top: 16%;
+            text-align: center;
+            border-radius: 10px;
+        }
+        #English{
+            font-size: 30px;
+            font-weight: 600;
+            height: 10%;
+            width: 30%;
+            
+        }
+        #Telugu{
+            font-size: 30px;
+            font-weight: 600;
+            height: 10%;
+            width: 30%;
+        }
+        #btn{
+            height: 5%;;
+            width: 200px;
+        font-size: 25px;
+        border-radius: 5px;
+        background-color: rgb(230, 13, 6);
+            }
+        
+            
+        
+    </style>
+
+</head>
+<body>
+    <div class="container">
+    <h1>ENGLISH TO TEUGU</h1>
+    <hr><hr>
+
+    <h2>ENGLISH</h2>
+
+    <input type="text" id="English" >
+    <br><br> 
+
+    <button id="btn" onclick="convert()">CONVERT</button>
+    
+    <h2>TELUGU</h2>
+    
+    <input type="text" id="Telugu">
+</div>
+
+
+    <canvas ></canvas>
+    
+</body>
+<script>
+    
+    
+    function convert(vol){
+        var x=document.getElementById("English").value;
+    if(x=='dog'|| x=='DOG'|| x=='Dog') {document.getElementById("Telugu").value="kukka"};
+    if(x=='cat'|| x=='CAT'|| x=='Cat') {document.getElementById("Telugu").value="pilli"};
+    if(x=='elephant'||x=='ELEPHANT'||x=='Elephant') {document.getElementById("Telugu").value="yenugu"};
+    if(x=='man'|| x=='Man'|| x=='MAN') {document.getElementById("Telugu").value="manishi"};
+    if(x=='boy'|| x=='Boy'|| x =='BOY') {document.getElementById("Telugu").value="abbayee"};
+    if(x=='girl'|| x=='GIRL'|| x =='Girl') {document.getElementById("Telugu").value="ammayee"};
+    if(x=='ball'|| x=='Ball'|| x =='BALL') {document.getElementById("Telugu").value="bamthee"};
+    if(x=='car'|| x=='Car'|| x =='CAR') {document.getElementById("Telugu").value="kaaru"};
+
+
+
+
+
+}
+</script>
+</html>

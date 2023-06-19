@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key logic</title>
+</head>
+<body>
+
+    <canvas id="canvas" width="1850" height="900" style="background-color: cornflowerblue;"></canvas>
+    
+</body>
+<script>
+
+window.addEventListener("keydown",moveRect,false);
+    window.addEventListener("keydown",keyPressed,false);
+    window.addEventListener("keyup",keyReleased,false);
+
+
+    var keys=[];
+    var rectX=0;
+    var rectY=0;
+
+    var canvas=document.getElementById("canvas");
+    var ctx=canvas.getContext("2d");
+    
+    
+
+   
+function drawRectangle(){
+
+    var cWidth=600;
+    var cHeight=600;
+    var cPosX=100;
+    var cPosY=100;
+    var rect2X=300;
+    var rect2Y=300;
+
+    //ctx.beginPath();
+    //ctx.strokeStyle="red";
+    ctx.fillStyle="black";
+    ctx.fillRect(cPosX,cPosY,cWidth,cHeight);
+    
+    //ctx.fill();
+    //ctx.stroke();
+    //ctx.closePath();
+
+    //ctx.beginPath();
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    //ctx.strokeStyle="blue";
+    
+    //ctx.fill();
+    //ctx.stroke();
+    //ctx.closePath();
+
+    //ctx.strokeStyle="blue";
+    ctx.fillStyle="red";
+    ctx.fillRect(rect2X,rect2Y,40,40);
+    //ctx.fillStyle="green";
+    //ctx.fill();
+    //ctx.stroke();
+    //ctx.closePath();
+    ctx.fillStyle="green";
+    ctx.fillRect(100+rectX,100+rectY,40,40);
+
+    
+    
+
+
+
+    
+   
+
+    
+} 
+
+drawRectangle();
+
+
+
+function moveRect(e){
+    switch(e.keyCode){
+
+        case 37:
+            rectX-=1;
+            break;
+        case 38:
+            rectY-=1;
+            break;
+        case 39:
+            rectX+=1;
+            break;
+        case 40:
+            rectY+=1;
+            break;
+
+            
+
+    }
+    
+    drawRectangle();
+    
+
+}
+function keyPressed(e){
+    keys[e.keyCode]=true;
+    if(keys[37]){
+        rectX-=1;
+
+    }
+    if(keys[38]){
+        rectY-=1;
+
+    }
+    if(keys[39]){
+        rectX+=1;
+      
+    }
+    if(keys[40]){
+        rectY+=1;
+
+    }
+    e.preventDefult();
+    drawRectangle();
+   
+}
+function keyReleased(e){
+    keys[e.keyCode]=false;
+
+}
+
+</script>
+</html>

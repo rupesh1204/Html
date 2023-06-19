@@ -1,0 +1,199 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Ball!!</title>
+</head>
+<style>
+    h1{
+        color: green;
+    }
+    canvas{
+        background-color: #09a667;
+        width: 1000px;
+        height: 600px;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+       transform-style: preserve-3d;
+        animation-name: slide;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+    @keyframes slide {
+        0%{
+            background-color: blueviolet;
+
+            
+        }
+        25%{
+            background-color:rgb(235, 205, 9);
+
+
+        }
+        50%{
+            background-color: lawngreen;
+
+        }
+        75%{
+            background-color: blue;
+
+        }
+        100%{
+            background-color: red;
+        }
+        
+    
+}
+</style>
+<body>
+    <center>
+    
+        <h1>GeeksforGeeks</h1>
+        <h3>Bouncing ball using javascript</h3>
+        <canvas id="doc">
+            
+
+        </canvas>
+    </center>
+    
+    
+</body>
+<script>
+    var canvas=document.getElementById("doc");
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
+
+    var l =canvas.getContext("2d");
+    
+    
+
+    //x and y are coordinates off the circle
+    //vx and vy are the respective speeds
+    
+    var x=Math.floor(Math.random()*innerWidth);
+    var y=Math.floor(Math.random()*innerHeight);
+
+    var vx=Math.floor(Math.random()*4);
+    var vy=Math.floor(Math.random()*10);
+    var radius=40;
+    
+    
+    move();
+    
+
+    function move(){
+        requestAnimationFrame(move);
+
+        //It clears the specified pixels within 
+
+        //the given rectangle 
+
+        l.clearRect(0,0,innerWidth,innerHeight);
+
+        // creating a circle
+
+        l.beginPath();
+        l.strokeStyle="black";
+        l.arc(x,y,radius,0,Math.PI*2,false);
+        l.fillStyle="blue";
+        l.fill();
+        l.stroke();
+
+
+        
+
+      
+        //conditons so that ball bouncing 
+
+        //from the edges
+
+        if(radius+x>innerWidth){ 
+        vx=0-vx;
+    }
+        if(x-radius<0){
+        vx=0-vx;
+    }
+
+        if(y+radius>innerHeight){
+        vy=0-vy;
+    }
+        if(y-radius<0){
+        vy=0-vy;
+    }
+
+        x=x+vx;
+        y=y+vy;
+
+        
+
+        
+    }
+    var canvas=document.getElementById("doc");
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
+
+    var l2 =canvas.getContext("2d");
+    var x2=Math.floor(Math.random()*innerWidth);
+    var y2=Math.floor(Math.random()*innerHeight);
+
+    var vx2=Math.floor(Math.random()*4);
+    var vy2=Math.floor(Math.random()*10);
+    var radius2=50;
+    mov2();
+    
+    function move2(){
+        requestAnimationFrame(move2);
+
+        //It clears the specified pixels within 
+
+        //the given rectangle 
+
+        l2.clearRect(0,0,innerWidth,innerHeight);
+
+        // creating a circle
+
+        l2.beginPath();
+        l2.strokeStyle="black";
+        l2.arc(x,y,radius,0,Math.PI*2,false);
+        l2.fillStyle="red";
+        l2.fill();
+        l2.stroke();
+
+
+        
+
+      
+        //conditons so that ball bouncing 
+
+        //from the edges
+
+        if(radius2+x2>innerWidth){ 
+        vx2=0-vx2;
+    }
+        if(x2-radius2<0){
+        vx2=0-vx2;
+    }
+
+        if(y2+radius2>innerHeight){
+        vy2=0-vy2;
+    }
+        if(y2-radius2<0){
+        vy2=0-vy2;
+    }
+
+        x2=x2+vx2;
+        y2=y2+vy2;
+
+        
+
+        
+    }
+
+
+
+
+</script>
+</html>  

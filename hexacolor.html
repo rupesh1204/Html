@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hexacolour</title>
+    <style>
+        .container{
+            justify-content: center;
+            align-items: center;
+            
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Background Color:: <span class="color"></span>  </h1>
+    <br><br><br>
+    <button id="btn">click Me</button>
+</div>
+    
+</body>
+<script type="text/javascript">
+    const colorsArray=["red","blue","orange"];
+    const btn=document.getElementById("btn");
+    const color=document.querySelector(".color");
+
+    btn.addEventListener('click',function(){
+
+        const randomNumber=getRandomNumber();
+        
+        document.body.style.backgroundColor=colorsArray[randomNumbe];
+        color.textContent=colorsArray[randomNumbe];
+    });
+    function getRandomNumber(){
+        return Math.floor(Math.random()*colorsArray.length);
+    }
+
+        
+    
+</script>
+</html>

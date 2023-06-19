@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keys</title>
+</head>
+<body>
+    <canvas id="canvas" width="1800" height="800" style="background-color: aqua;">
+
+    </canvas>
+    
+</body>
+<script>
+    window.addEventListener("keydown",moveSomething,false);
+    window.addEventListener("keydown",keyPressed,false);
+    window.addEventListener("keyup",keyReleased,false);
+
+   
+
+
+    var deltaX=0;
+    var deltaY=0;
+    
+    var keys=[];
+
+    var canvas=document.querySelector("#canvas");
+    var context=canvas.getContext("2d");
+    
+
+   function drawTriangle(){
+        //The Triangle
+        context.beginPath();
+        context.clearRect(0,0,canvas.width,canvas.height);
+        context.rect(100+deltaX,100+deltaY,40,40)
+        context.closePath();
+        //The outline
+        context.lineWidth=10;
+        context.strokeStyle="red";
+        context.stroke();
+
+        //The fill colour
+        context.fillStyle="blue";
+        context.fill();
+
+        
+
+
+    }
+    drawTriangle();
+    
+    function moveSomething(e){
+
+        switch(e.keyCode){
+            case 37:
+                deltaX-=5;
+                break;
+            case 38:
+                deltaY-=5;
+                break;
+            case 39:
+                deltaX+=5;
+                //deltaY-=5;
+                break;
+               
+            case 40:
+                deltaY+=5;
+                break;
+                
+
+
+        }
+        
+
+       
+    
+        drawTriangle();
+    }
+    function keyPressed(e){
+        keys[e.keyCode]=true;
+        if(keys[37]){
+            deltaX-=5;
+            
+        }
+        if(keys[39]){
+            deltaX+=15;
+           
+        }
+        if(keys[38]){
+            deltaY-=5;
+
+        }
+        if(keys[40]){
+            deltaY+=5;
+        }
+        e.preventDefult();
+        drawTriangle();
+
+    }
+    function keyReleased(e){
+        keys[e.keyCode]=false;
+    }
+
+
+
+</script>
+</html>

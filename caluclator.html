@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>caluculator</title>
+    <style>
+        .container{
+            position: absolute;
+            left: 30%;
+            top: 20%;
+            text-align: center;
+        }
+        input[type=text]{
+            background-color: black;
+            color:white;
+            width: 100%;
+            height: 100%;
+            font-size: 40px;
+            border-radius: 5px;
+        }
+        input[type=button]{
+            background-color: rgb(221, 221, 234);
+            color: rgb(25, 18, 8);
+            width: 100%;
+            height: 100%;
+            font-size: 40px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+     <div class="container">
+        <h1>My First Caluculator</h1>
+    <table style="border: 3;">
+        <tr>
+            <td colspan="3"><input type="text" id="result"></td>
+            <td><input type="button" value="C"onclick="clr()"></td>
+            
+        </tr>
+        <tr>
+            <td><input type="button"value="1"onclick="dis(1)"></td>
+            <td><input type="button"value="2"onclick="dis(2)"></td>
+            <td><input type="button"value="3"onclick="dis(3)"></td>
+            <td><input type="button"value="+"onclick="dis('+')"></td>
+        </tr>
+        <tr>
+            <td><input type="button"value="4"onclick="dis(4)"></td>
+            <td><input type="button"value="5"onclick="dis(5)"></td>
+            <td><input type="button"value="6"onclick="dis(6)"></td>
+            <td><input type="button"value="-"onclick="dis('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button"value="7"onclick="dis(7)"></td>
+            <td><input type="button"value="8"onclick="dis(8)"></td>
+            <td><input type="button"value="9"onclick="dis(9)"></td>
+            <td><input type="button"value="/"onclick="dis('/')"></td>
+        </tr>
+        <tr>
+            <td><input type="button"value="0"onclick="dis(0)"></td>
+            <td><input type="button"value="x"onclick="dis('*')"></td>
+            <td><input type="button"value="00"onclick="dis('00')"></td>
+            <td><input type="button"value="="onclick="solve()"></td>
+        </tr>
+        <tr>
+            <td colspan="3"><input type="button"value="B"onclick="back()"></td>
+            <td><input type="button"value="%"onclick="dis('%')"></td>
+        </tr>
+    </table>
+</div>
+    
+</body>
+<script>
+    function dis(vol){
+        document.getElementById("result").value+=vol;
+    }
+    function solve(){
+        x=document.getElementById("result").value;
+        y=eval(x);
+       
+        document.getElementById("result").value=x + "=" + y;
+
+        
+    }
+    function clr(){
+        document.getElementById("result").value="";
+    }
+    function back(){
+        var str=document.getElementById("result").value;
+        str=str.substr(0,str.length-1);
+        document.getElementById("result").value=str;
+
+        
+    }
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colour optios</title>
+    <style>
+        .container{
+            position: absolute;
+            background-color: rgb(16, 255, 255);
+            width: 100px;
+            height: 50px;
+            top: 20%;
+            left: 40%;
+            justify-items: center;
+        }
+        select{
+            font-size: 40px;
+            background-color: burlywood;
+            color: black;
+            align-items:center;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <select onchange="color(this.value)">
+    
+    <option value=" ">colour</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+    <option value="red">Red</option>
+    <option value="yellow">Yellow</option>
+    </select>
+</div>
+    
+</body>
+<script>
+    function color(value){
+        document.body.style.backgroundColor=value;
+    }
+</script>
+</html>

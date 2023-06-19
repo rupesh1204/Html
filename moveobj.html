@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>move object </title>
+    <style>
+        canvas{
+            background-color: hotpink;
+            width: 30px;
+            height: 30px;
+
+        }
+    </style>
+</head>
+<body onkeydown="getkeyAndMove(event)">
+
+    <canvas id="game" >
+
+    </canvas>
+
+    
+</body>
+<script>
+    //init  object global 
+    var obj=null;
+    function init(){
+        obj=document.getElementById("game");
+        obj.style.position="relative";
+        obj.style.left="100px";
+        obj.style.top="100px";
+
+
+    }
+    function getkeyAndMove(e){
+        var key_code=e.which||e.keyCode;
+        switch(key_code){
+            case 37:
+                moveLeft();
+                break;
+            case 38:
+                moveUp();
+                break;
+            case 39:
+                moveRight();
+                break;
+            case 40:
+                moveDown();
+                break;    
+        }
+    }
+
+    
+   
+    
+     function moveLeft(){
+        obj.style.left=parseInt(obj.style.left)-5 +"px";
+    }
+
+    function moveUp(){
+        obj.style.top=parseInt(obj.style.top)-5 +"px";
+    }
+    function moveRight(){
+        obj.style.left=parseInt(obj.style.left)+5 +"px";
+    }
+    function moveDown(){
+        obj.style.top=parseInt(obj.style.top)+5 +"px";
+    }
+    window.onload=init();
+
+</script>
+</html>
